@@ -45,7 +45,6 @@ public class Deck {
 		Collections.shuffle(deck);
 	}
 
-
 	public List<Card> dealThreeCards() {
 		List<Card> dealedCards = new ArrayList<Card>();
 
@@ -54,6 +53,14 @@ public class Deck {
 		}
 
 		dealed += 3;
+		return dealedCards;
+	}
+
+	public List<Card> dealOneCard() {
+		List<Card> dealedCards = new ArrayList<Card>();
+		dealedCards.add(deck.get(dealed));
+
+		dealed++;
 		return dealedCards;
 	}
 }
