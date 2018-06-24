@@ -11,7 +11,7 @@ import java.util.List;
 import com.java.cpc.deck.Card;
 import com.java.cpc.deck.Rank;
 import com.java.cpc.deck.Suit;
-import com.java.cpc.io.ConsoleIOManager;
+import com.java.cpc.io.ConsoleIO;
 import com.java.cpc.rules.SpecialAnnounce;
 
 /**
@@ -52,6 +52,7 @@ public abstract class Player {
 				hasCurrenSuit =  true;
 			}
 		}
+		
 		return hasCurrenSuit;	
 	}
 	
@@ -64,10 +65,12 @@ public abstract class Player {
 				if (one.getSuit().compareTo(two.getSuit()) == 0) {
 					return one.getRank().compareTo(two.getRank());
 				}
+				
 				return one.getSuit().compareTo(two.getSuit());
 
 			}
 		});
+		
 		return cardsOnTable;
 	}
 
@@ -78,11 +81,11 @@ public abstract class Player {
 		
 		if(hasKing || hasQueen) {
 			if(card.getSuit().equals(trump)) {
-				ConsoleIOManager.printFourtyAnnounce();
-				this.points += SpecialAnnounce.Fourty.points;
+				ConsoleIO.printFourtyAnnounce();
+				this.roundPoints += SpecialAnnounce.Fourty.points;
 			} else {
-				ConsoleIOManager.printTwentyAnnounce();
-				this.points += SpecialAnnounce.Twenty.points;
+				ConsoleIO.printTwentyAnnounce();
+				this.roundPoints += SpecialAnnounce.Twenty.points;
 			}
 		}
 
@@ -129,11 +132,16 @@ public abstract class Player {
 	public void setTeam(String team) {
 		this.team = team;
 	}
+	
+	public boolean hasCardInHand() {
+		return !this.cardsInHand.isEmpty();
+	}
 
 	@Override
 	public boolean equals(Object o) {
 		Player player = (Player) o;
 		boolean isEquals = false;
+		
 		if (this.getName() == player.getName() && this.getCardsInHand() == player.getCardsInHand()) {
 			isEquals = true;
 		}

@@ -38,7 +38,7 @@ public class TestPlayer {
 		final ByteArrayInputStream input = new ByteArrayInputStream("1".getBytes());
 		System.setIn(input);
 
-		assertTrue(new Card(Rank.Ace, Suit.Clubs).equals(player.chooseCard()));
+		assertTrue(new Card(Rank.Ace, Suit.Clubs).equals(player.chooseCard(Suit.Clubs)));
 
 	}
 
@@ -54,7 +54,54 @@ public class TestPlayer {
 		final ByteArrayInputStream input = new ByteArrayInputStream("2".getBytes());
 		System.setIn(input);
 
-		assertTrue(new Card(Rank.Jack, Suit.Clubs).equals(player.chooseCard()));
+		assertTrue(new Card(Rank.Jack, Suit.Clubs).equals(player.chooseCard(Suit.Clubs)));
+
+	}
+	
+	@Test
+	public void testChooseThirdCard() {
+		final Player player = new HumanPlayer("test");
+		final List<Card> cards = new ArrayList<Card>();
+
+		cards.add(new Card(Rank.Ace, Suit.Clubs));
+		cards.add(new Card(Rank.Jack, Suit.Clubs));
+		cards.add(new Card(Rank.Ace, Suit.Spade));
+		player.fillHand(cards);
+
+		final ByteArrayInputStream input = new ByteArrayInputStream("3".getBytes());
+		System.setIn(input);
+
+		assertTrue(new Card(Rank.Ace, Suit.Spade).equals(player.chooseCard(Suit.Clubs)));
+
+	}
+	
+	@Test
+	public void testHasCurrentSuit() {
+		final Player player = new HumanPlayer("test");
+		final List<Card> cards = new ArrayList<Card>();
+
+		cards.add(new Card(Rank.Ace, Suit.Clubs));
+		cards.add(new Card(Rank.Jack, Suit.Clubs));
+		cards.add(new Card(Rank.Ace, Suit.Spade));
+		player.fillHand(cards);
+
+
+		assertTrue(player.hasCurrenSuit(Suit.Spade));
+
+	}
+	
+	@Test
+	public void testHasNotCurrentSuit() {
+		final Player player = new HumanPlayer("test");
+		final List<Card> cards = new ArrayList<Card>();
+
+		cards.add(new Card(Rank.Ace, Suit.Clubs));
+		cards.add(new Card(Rank.Jack, Suit.Clubs));
+		cards.add(new Card(Rank.Ace, Suit.Spade));
+		player.fillHand(cards);
+
+
+		assertTrue(!player.hasCurrenSuit(Suit.Hearts));
 
 	}
 

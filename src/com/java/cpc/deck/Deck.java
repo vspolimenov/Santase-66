@@ -73,6 +73,15 @@ public class Deck {
 		return isEmpty;
 	}
 	
+	public boolean hasCards(){
+		boolean isEmpty = false;
+		if(dealed >= 24) {
+			isEmpty = true ;
+		}
+		
+		return isEmpty;
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 		Deck deck = (Deck) o;
