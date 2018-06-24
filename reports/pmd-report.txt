@@ -1,0 +1,342 @@
+src/com/java/cpc/GameConstants.java:8:	Each class should declare at least one constructor
+src/com/java/cpc/GameConstants.java:9:	fieldCommentRequirement Required
+src/com/java/cpc/GameConstants.java:10:	fieldCommentRequirement Required
+src/com/java/cpc/TestInMain.java:10:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/com/java/cpc/TestInMain.java:15:	Parameter 'args' is not assigned and could be declared final
+src/com/java/cpc/deck/Card.java:10:	Avoid short class names like Card
+src/com/java/cpc/deck/Card.java:12:	Avoid using redundant field initializer for 'rank'
+src/com/java/cpc/deck/Card.java:12:	fieldCommentRequirement Required
+src/com/java/cpc/deck/Card.java:13:	Avoid using redundant field initializer for 'suit'
+src/com/java/cpc/deck/Card.java:13:	fieldCommentRequirement Required
+src/com/java/cpc/deck/Card.java:15:	Parameter 'rank' is not assigned and could be declared final
+src/com/java/cpc/deck/Card.java:15:	Parameter 'suit' is not assigned and could be declared final
+src/com/java/cpc/deck/Card.java:15:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Card.java:20:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Card.java:25:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Card.java:29:	Parameter 'rank' is not assigned and could be declared final
+src/com/java/cpc/deck/Card.java:29:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Card.java:33:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Card.java:37:	Parameter 'suit' is not assigned and could be declared final
+src/com/java/cpc/deck/Card.java:37:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Card.java:42:	Avoid variables with short names like o
+src/com/java/cpc/deck/Card.java:42:	Parameter 'o' is not assigned and could be declared final
+src/com/java/cpc/deck/Card.java:42:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Card.java:43:	Local variable 'card' could be declared final
+src/com/java/cpc/deck/Card.java:44:	Found 'DD'-anomaly for variable 'isEquals' (lines '44'-'46').
+src/com/java/cpc/deck/Card.java:45:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/deck/Card.java:45:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/deck/Card.java:54:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Card.java:55:	Found 'DD'-anomaly for variable 'result' (lines '55'-'56').
+src/com/java/cpc/deck/Card.java:61:	Parameter 'card' is not assigned and could be declared final
+src/com/java/cpc/deck/Card.java:65:	Parameter 'card' is not assigned and could be declared final
+src/com/java/cpc/deck/Card.java:65:	Parameter 'trump' is not assigned and could be declared final
+src/com/java/cpc/deck/Card.java:65:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Card.java:66:	Found 'DD'-anomaly for variable 'result' (lines '66'-'69').
+src/com/java/cpc/deck/Card.java:66:	Found 'DD'-anomaly for variable 'result' (lines '66'-'71').
+src/com/java/cpc/deck/Card.java:70:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/deck/Deck.java:14:	Avoid short class names like Deck
+src/com/java/cpc/deck/Deck.java:16:	Avoid using redundant field initializer for 'deck'
+src/com/java/cpc/deck/Deck.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/java/cpc/deck/Deck.java:16:	It is somewhat confusing to have a field name matching the declaring class name
+src/com/java/cpc/deck/Deck.java:16:	Private field 'deck' could be made final; it is only initialized in the declaration or constructor.
+src/com/java/cpc/deck/Deck.java:16:	fieldCommentRequirement Required
+src/com/java/cpc/deck/Deck.java:17:	Avoid using redundant field initializer for 'dealed'
+src/com/java/cpc/deck/Deck.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/java/cpc/deck/Deck.java:17:	fieldCommentRequirement Required
+src/com/java/cpc/deck/Deck.java:19:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Deck.java:34:	Parameter 'suit' is not assigned and could be declared final
+src/com/java/cpc/deck/Deck.java:43:	Found 'UR'-anomaly for variable 'card' (lines '43'-'45').
+src/com/java/cpc/deck/Deck.java:44:	Local variable 'card' could be declared final
+src/com/java/cpc/deck/Deck.java:45:	System.out.println is used
+src/com/java/cpc/deck/Deck.java:51:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Deck.java:52:	Local variable 'dealedCards' could be declared final
+src/com/java/cpc/deck/Deck.java:62:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Deck.java:63:	Local variable 'dealedCards' could be declared final
+src/com/java/cpc/deck/Deck.java:70:	publicMethodCommentRequirement Required
+src/com/java/cpc/deck/Deck.java:71:	Found 'DD'-anomaly for variable 'isEmpty' (lines '71'-'73').
+src/com/java/cpc/deck/Deck.java:72:	Avoid using Literals in Conditional Statements
+src/com/java/cpc/deck/Rank.java:3:	enumCommentRequirement Required
+src/com/java/cpc/deck/Rank.java:6:	fieldCommentRequirement Required
+src/com/java/cpc/deck/Rank.java:8:	Parameter 'points' is not assigned and could be declared final
+src/com/java/cpc/deck/Suit.java:3:	enumCommentRequirement Required
+src/com/java/cpc/deck/Suit.java:6:	Avoid variables with short names like id
+src/com/java/cpc/deck/Suit.java:6:	fieldCommentRequirement Required
+src/com/java/cpc/deck/Suit.java:7:	Avoid variables with short names like id
+src/com/java/cpc/deck/Suit.java:7:	Parameter 'id' is not assigned and could be declared final
+src/com/java/cpc/game/GameCycle.java:7:	Avoid unused imports such as 'java.util.Collections'
+src/com/java/cpc/game/GameCycle.java:8:	Avoid unused imports such as 'java.util.Comparator'
+src/com/java/cpc/game/GameCycle.java:16:	Avoid unused imports such as 'com.java.cpc.player.ComputerPlayer'
+src/com/java/cpc/game/GameCycle.java:19:	Avoid unused imports such as 'com.java.cpc.player.Team'
+src/com/java/cpc/game/GameCycle.java:27:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/com/java/cpc/game/GameCycle.java:29:	To avoid mistakes add a comment at the beginning of the firstPlayer field if you want a default access modifier
+src/com/java/cpc/game/GameCycle.java:29:	Use explicit scoping instead of the default package private level
+src/com/java/cpc/game/GameCycle.java:29:	fieldCommentRequirement Required
+src/com/java/cpc/game/GameCycle.java:30:	To avoid mistakes add a comment at the beginning of the secondPlayer field if you want a default access modifier
+src/com/java/cpc/game/GameCycle.java:30:	Use explicit scoping instead of the default package private level
+src/com/java/cpc/game/GameCycle.java:30:	fieldCommentRequirement Required
+src/com/java/cpc/game/GameCycle.java:31:	Avoid using redundant field initializer for 'hasWinner'
+src/com/java/cpc/game/GameCycle.java:31:	fieldCommentRequirement Required
+src/com/java/cpc/game/GameCycle.java:33:	fieldCommentRequirement Required
+src/com/java/cpc/game/GameCycle.java:34:	Avoid excessively long variable names like isFirstPlayerOnHand
+src/com/java/cpc/game/GameCycle.java:34:	Field isFirstPlayerOnHand has the same name as a method
+src/com/java/cpc/game/GameCycle.java:34:	fieldCommentRequirement Required
+src/com/java/cpc/game/GameCycle.java:35:	fieldCommentRequirement Required
+src/com/java/cpc/game/GameCycle.java:37:	publicMethodCommentRequirement Required
+src/com/java/cpc/game/GameCycle.java:56:	Avoid variables with short names like r
+src/com/java/cpc/game/GameCycle.java:56:	Local variable 'r' could be declared final
+src/com/java/cpc/game/GameCycle.java:57:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:58:	System.out.println is used
+src/com/java/cpc/game/GameCycle.java:61:	Found 'DU'-anomaly for variable 'round' (lines '61'-'72').
+src/com/java/cpc/game/GameCycle.java:63:	System.out.println is used
+src/com/java/cpc/game/GameCycle.java:68:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:76:	Parameter 'player' is not assigned and could be declared final
+src/com/java/cpc/game/GameCycle.java:77:	Avoid using Literals in Conditional Statements
+src/com/java/cpc/game/GameCycle.java:78:	System.out.println is used
+src/com/java/cpc/game/GameCycle.java:79:	Avoid using Literals in Conditional Statements
+src/com/java/cpc/game/GameCycle.java:95:	Local variable 'playedCards' could be declared final
+src/com/java/cpc/game/GameCycle.java:96:	Avoid excessively long variable names like firstRoundPlayerHand
+src/com/java/cpc/game/GameCycle.java:96:	Found 'DD'-anomaly for variable 'firstRoundPlayerHand' (lines '96'-'101').
+src/com/java/cpc/game/GameCycle.java:96:	Found 'DD'-anomaly for variable 'firstRoundPlayerHand' (lines '96'-'107').
+src/com/java/cpc/game/GameCycle.java:97:	Avoid excessively long variable names like secondRoundPlayerHand
+src/com/java/cpc/game/GameCycle.java:97:	Found 'DD'-anomaly for variable 'secondRoundPlayerHand' (lines '97'-'103').
+src/com/java/cpc/game/GameCycle.java:97:	Found 'DD'-anomaly for variable 'secondRoundPlayerHand' (lines '97'-'109').
+src/com/java/cpc/game/GameCycle.java:102:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:104:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:108:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:110:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:115:	System.out.println is used
+src/com/java/cpc/game/GameCycle.java:115:	The String literal " is onHand" appears 4 times in this file; the first occurrence is on line 115
+src/com/java/cpc/game/GameCycle.java:117:	System.out.println is used
+src/com/java/cpc/game/GameCycle.java:125:	Local variable 'playedCards' could be declared final
+src/com/java/cpc/game/GameCycle.java:126:	Avoid excessively long variable names like firstRoundPlayerHand
+src/com/java/cpc/game/GameCycle.java:126:	Found 'DD'-anomaly for variable 'firstRoundPlayerHand' (lines '126'-'131').
+src/com/java/cpc/game/GameCycle.java:126:	Found 'DD'-anomaly for variable 'firstRoundPlayerHand' (lines '126'-'143').
+src/com/java/cpc/game/GameCycle.java:127:	Avoid excessively long variable names like secondRoundPlayerHand
+src/com/java/cpc/game/GameCycle.java:127:	Found 'DD'-anomaly for variable 'secondRoundPlayerHand' (lines '127'-'133').
+src/com/java/cpc/game/GameCycle.java:127:	Found 'DD'-anomaly for variable 'secondRoundPlayerHand' (lines '127'-'145').
+src/com/java/cpc/game/GameCycle.java:132:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:134:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:134:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:135:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:135:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:135:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:135:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:135:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:135:	Useless parentheses.
+src/com/java/cpc/game/GameCycle.java:136:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:137:	System.out.println is used
+src/com/java/cpc/game/GameCycle.java:140:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:144:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:146:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:146:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:147:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:147:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:147:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:147:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:147:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:147:	Useless parentheses.
+src/com/java/cpc/game/GameCycle.java:148:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:149:	System.out.println is used
+src/com/java/cpc/game/GameCycle.java:152:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/game/GameCycle.java:157:	System.out.println is used
+src/com/java/cpc/game/GameCycle.java:159:	System.out.println is used
+src/com/java/cpc/game/GameCycle.java:165:	Parameter 'playedCards' is not assigned and could be declared final
+src/com/java/cpc/game/GameCycle.java:167:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:167:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:167:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:167:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:167:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:167:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:167:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:167:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:169:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:169:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:169:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:169:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:169:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:169:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:169:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:169:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/game/GameCycle.java:173:	Parameter 'playedCards' is not assigned and could be declared final
+src/com/java/cpc/game/GameCycle.java:175:	Avoid excessively long variable names like isSamePlayerOnHand
+src/com/java/cpc/game/GameCycle.java:175:	Found 'DD'-anomaly for variable 'isSamePlayerOnHand' (lines '175'-'177').
+src/com/java/cpc/game/GameCycle.java:176:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/io/ConsoleIOManager.java:12:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/com/java/cpc/io/ConsoleIOManager.java:14:	Parameter 'maxChoice' is not assigned and could be declared final
+src/com/java/cpc/io/ConsoleIOManager.java:14:	publicMethodCommentRequirement Required
+src/com/java/cpc/io/ConsoleIOManager.java:15:	Avoid variables with short names like sc
+src/com/java/cpc/io/ConsoleIOManager.java:15:	Local variable 'sc' could be declared final
+src/com/java/cpc/io/ConsoleIOManager.java:16:	System.out.println is used
+src/com/java/cpc/player/ComputerPlayer.java:7:	headerCommentRequirement Required
+src/com/java/cpc/player/ComputerPlayer.java:9:	Parameter 'name' is not assigned and could be declared final
+src/com/java/cpc/player/ComputerPlayer.java:9:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/ComputerPlayer.java:16:	Avoid declaring a variable if it is unreferenced before a possible exit point.
+src/com/java/cpc/player/ComputerPlayer.java:16:	Avoid unused local variables such as 'rn'.
+src/com/java/cpc/player/ComputerPlayer.java:16:	Avoid variables with short names like rn
+src/com/java/cpc/player/ComputerPlayer.java:16:	Found 'DU'-anomaly for variable 'rn' (lines '16'-'19').
+src/com/java/cpc/player/ComputerPlayer.java:16:	Local variable 'rn' could be declared final
+src/com/java/cpc/player/ComputerPlayer.java:17:	Local variable 'randomNum' could be declared final
+src/com/java/cpc/player/ComputerPlayer.java:18:	Consider simply returning the value vs storing it in local variable 'randomNum'
+src/com/java/cpc/player/ComputerPlayer.java:21:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/ComputerPlayer.java:23:	Local variable 'choiceFromHand' could be declared final
+src/com/java/cpc/player/ComputerPlayer.java:30:	Document empty method body
+src/com/java/cpc/player/ComputerPlayer.java:30:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/ComputerPlayer.java:34:	Avoid unused private methods such as 'makeSpecialAnnounce()'.
+src/com/java/cpc/player/ComputerPlayer.java:34:	Document empty method body
+src/com/java/cpc/player/ComputerPlayer.java:39:	Parameter 'max' is not assigned and could be declared final
+src/com/java/cpc/player/ComputerPlayer.java:39:	Parameter 'min' is not assigned and could be declared final
+src/com/java/cpc/player/ComputerPlayer.java:45:	Avoid variables with short names like r
+src/com/java/cpc/player/ComputerPlayer.java:45:	Local variable 'r' could be declared final
+src/com/java/cpc/player/HumanPlayer.java:6:	Avoid unused imports such as 'java.util.List'
+src/com/java/cpc/player/HumanPlayer.java:17:	Parameter 'name' is not assigned and could be declared final
+src/com/java/cpc/player/HumanPlayer.java:17:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/HumanPlayer.java:23:	Found 'UR'-anomaly for variable 'c' (lines '23'-'25').
+src/com/java/cpc/player/HumanPlayer.java:23:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/HumanPlayer.java:24:	Local variable 'c' could be declared final
+src/com/java/cpc/player/HumanPlayer.java:25:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/player/HumanPlayer.java:25:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/player/HumanPlayer.java:25:	System.out.println is used
+src/com/java/cpc/player/HumanPlayer.java:28:	Local variable 'choiceFromHand' could be declared final
+src/com/java/cpc/player/HumanPlayer.java:37:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/HumanPlayer.java:42:	Avoid unused private methods such as 'makeSpecialAnnounce()'.
+src/com/java/cpc/player/HumanPlayer.java:42:	Document empty method body
+src/com/java/cpc/player/Player.java:19:	Abstract classes should be named AbstractXXX
+src/com/java/cpc/player/Player.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/java/cpc/player/Player.java:21:	fieldCommentRequirement Required
+src/com/java/cpc/player/Player.java:22:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/java/cpc/player/Player.java:22:	fieldCommentRequirement Required
+src/com/java/cpc/player/Player.java:23:	Avoid using redundant field initializer for 'points'
+src/com/java/cpc/player/Player.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/java/cpc/player/Player.java:23:	fieldCommentRequirement Required
+src/com/java/cpc/player/Player.java:24:	Avoid using redundant field initializer for 'roundPoints'
+src/com/java/cpc/player/Player.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/java/cpc/player/Player.java:24:	fieldCommentRequirement Required
+src/com/java/cpc/player/Player.java:25:	Avoid unused private fields such as 'specialAnounces'.
+src/com/java/cpc/player/Player.java:25:	Private field 'specialAnounces' could be made final; it is only initialized in the declaration or constructor.
+src/com/java/cpc/player/Player.java:25:	fieldCommentRequirement Required
+src/com/java/cpc/player/Player.java:26:	Parameter 'name' is not assigned and could be declared final
+src/com/java/cpc/player/Player.java:26:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Player.java:30:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Player.java:34:	Found 'UR'-anomaly for variable 'card' (lines '34'-'36').
+src/com/java/cpc/player/Player.java:34:	Parameter 'cards' is not assigned and could be declared final
+src/com/java/cpc/player/Player.java:34:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Player.java:35:	Local variable 'card' could be declared final
+src/com/java/cpc/player/Player.java:40:	Avoid using redundant field initializer for 'name'
+src/com/java/cpc/player/Player.java:40:	Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+src/com/java/cpc/player/Player.java:40:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/java/cpc/player/Player.java:40:	fieldCommentRequirement Required
+src/com/java/cpc/player/Player.java:41:	Avoid using redundant field initializer for 'team'
+src/com/java/cpc/player/Player.java:41:	Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+src/com/java/cpc/player/Player.java:41:	fieldCommentRequirement Required
+src/com/java/cpc/player/Player.java:43:	Found 'UR'-anomaly for variable 'card' (lines '43'-'46').
+src/com/java/cpc/player/Player.java:43:	Parameter 'suit' is not assigned and could be declared final
+src/com/java/cpc/player/Player.java:43:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Player.java:44:	Found 'DD'-anomaly for variable 'hasCurrenSuit' (lines '44'-'47').
+src/com/java/cpc/player/Player.java:45:	Local variable 'card' could be declared final
+src/com/java/cpc/player/Player.java:46:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/player/Player.java:46:	Potential violation of Law of Demeter (object not created locally)
+src/com/java/cpc/player/Player.java:47:	Found 'DD'-anomaly for variable 'hasCurrenSuit' (lines '47'-'47').
+src/com/java/cpc/player/Player.java:53:	Parameter 'cardsOnTable' is not assigned and could be declared final
+src/com/java/cpc/player/Player.java:53:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Player.java:57:	Parameter 'one' is not assigned and could be declared final
+src/com/java/cpc/player/Player.java:57:	Parameter 'two' is not assigned and could be declared final
+src/com/java/cpc/player/Player.java:57:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Player.java:59:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/player/Player.java:60:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/player/Player.java:62:	Potential violation of Law of Demeter (method chain calls)
+src/com/java/cpc/player/Player.java:69:	An empty method in an abstract class should be abstract instead
+src/com/java/cpc/player/Player.java:69:	Document empty method body
+src/com/java/cpc/player/Player.java:69:	protectedMethodCommentRequirement Required
+src/com/java/cpc/player/Player.java:72:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Player.java:75:	Parameter 'roundPoints' is not assigned and could be declared final
+src/com/java/cpc/player/Player.java:75:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Player.java:79:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Player.java:82:	Parameter 'points' is not assigned and could be declared final
+src/com/java/cpc/player/Player.java:82:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Player.java:86:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Player.java:89:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Team.java:3:	Avoid short class names like Team
+src/com/java/cpc/player/Team.java:3:	headerCommentRequirement Required
+src/com/java/cpc/player/Team.java:5:	Avoid using redundant field initializer for 'score'
+src/com/java/cpc/player/Team.java:5:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/java/cpc/player/Team.java:5:	Private field 'score' could be made final; it is only initialized in the declaration or constructor.
+src/com/java/cpc/player/Team.java:5:	fieldCommentRequirement Required
+src/com/java/cpc/player/Team.java:6:	Avoid using redundant field initializer for 'localScore'
+src/com/java/cpc/player/Team.java:6:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/java/cpc/player/Team.java:6:	Private field 'localScore' could be made final; it is only initialized in the declaration or constructor.
+src/com/java/cpc/player/Team.java:6:	fieldCommentRequirement Required
+src/com/java/cpc/player/Team.java:8:	Avoid using redundant field initializer for 'name'
+src/com/java/cpc/player/Team.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/java/cpc/player/Team.java:8:	fieldCommentRequirement Required
+src/com/java/cpc/player/Team.java:9:	Avoid using redundant field initializer for 'firstPlayer'
+src/com/java/cpc/player/Team.java:9:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/java/cpc/player/Team.java:9:	fieldCommentRequirement Required
+src/com/java/cpc/player/Team.java:10:	Avoid using redundant field initializer for 'secondPlayer'
+src/com/java/cpc/player/Team.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/java/cpc/player/Team.java:10:	fieldCommentRequirement Required
+src/com/java/cpc/player/Team.java:12:	Parameter 'firstPlayerName' is not assigned and could be declared final
+src/com/java/cpc/player/Team.java:12:	Parameter 'name' is not assigned and could be declared final
+src/com/java/cpc/player/Team.java:12:	Parameter 'secondPlayerName' is not assigned and could be declared final
+src/com/java/cpc/player/Team.java:12:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Team.java:18:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Team.java:24:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Team.java:28:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Team.java:33:	Document empty method body
+src/com/java/cpc/player/Team.java:33:	publicMethodCommentRequirement Required
+src/com/java/cpc/player/Team.java:37:	Document empty method body
+src/com/java/cpc/player/Team.java:37:	Parameter 'score' is not assigned and could be declared final
+src/com/java/cpc/player/Team.java:37:	publicMethodCommentRequirement Required
+src/com/java/cpc/rules/SpecialAnnounce.java:13:	fieldCommentRequirement Required
+src/com/java/cpc/rules/SpecialAnnounce.java:14:	Parameter 'points' is not assigned and could be declared final
+test/com/java/cpc/deck/TestCard.java:10:	No need to import a type that lives in the same package
+test/com/java/cpc/deck/TestCard.java:11:	No need to import a type that lives in the same package
+test/com/java/cpc/deck/TestCard.java:12:	No need to import a type that lives in the same package
+test/com/java/cpc/deck/TestCard.java:18:	Each class should declare at least one constructor
+test/com/java/cpc/deck/TestCard.java:21:	publicMethodCommentRequirement Required
+test/com/java/cpc/deck/TestCard.java:22:	Local variable 'card' could be declared final
+test/com/java/cpc/deck/TestCard.java:24:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:24:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:28:	publicMethodCommentRequirement Required
+test/com/java/cpc/deck/TestCard.java:30:	Local variable 'card' could be declared final
+test/com/java/cpc/deck/TestCard.java:32:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:32:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:36:	publicMethodCommentRequirement Required
+test/com/java/cpc/deck/TestCard.java:37:	Local variable 'card' could be declared final
+test/com/java/cpc/deck/TestCard.java:39:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:39:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:43:	publicMethodCommentRequirement Required
+test/com/java/cpc/deck/TestCard.java:45:	Local variable 'card' could be declared final
+test/com/java/cpc/deck/TestCard.java:47:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:47:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:51:	publicMethodCommentRequirement Required
+test/com/java/cpc/deck/TestCard.java:53:	Local variable 'card' could be declared final
+test/com/java/cpc/deck/TestCard.java:55:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:55:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:59:	publicMethodCommentRequirement Required
+test/com/java/cpc/deck/TestCard.java:60:	Local variable 'card' could be declared final
+test/com/java/cpc/deck/TestCard.java:62:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:62:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:66:	publicMethodCommentRequirement Required
+test/com/java/cpc/deck/TestCard.java:68:	Local variable 'card' could be declared final
+test/com/java/cpc/deck/TestCard.java:70:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestCard.java:70:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestDeck.java:7:	No need to import a type that lives in the same package
+test/com/java/cpc/deck/TestDeck.java:9:	Each class should declare at least one constructor
+test/com/java/cpc/deck/TestDeck.java:9:	headerCommentRequirement Required
+test/com/java/cpc/deck/TestDeck.java:12:	publicMethodCommentRequirement Required
+test/com/java/cpc/deck/TestDeck.java:13:	Local variable 'deck' could be declared final
+test/com/java/cpc/deck/TestDeck.java:15:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestDeck.java:15:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestDeck.java:19:	publicMethodCommentRequirement Required
+test/com/java/cpc/deck/TestDeck.java:20:	Local variable 'deck' could be declared final
+test/com/java/cpc/deck/TestDeck.java:22:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/deck/TestDeck.java:22:	Potential violation of Law of Demeter (method chain calls)
+test/com/java/cpc/game/TestGameCycle.java:5:	Each class should declare at least one constructor
+test/com/java/cpc/game/TestGameCycle.java:5:	headerCommentRequirement Required
+test/com/java/cpc/game/TestGameCycle.java:8:	Document empty method body
+test/com/java/cpc/game/TestGameCycle.java:8:	publicMethodCommentRequirement Required
+test/com/java/cpc/player/TestPlayer.java:16:	Each class should declare at least one constructor
+test/com/java/cpc/player/TestPlayer.java:16:	headerCommentRequirement Required
+test/com/java/cpc/player/TestPlayer.java:19:	publicMethodCommentRequirement Required
+test/com/java/cpc/player/TestPlayer.java:30:	publicMethodCommentRequirement Required
+test/com/java/cpc/player/TestPlayer.java:46:	publicMethodCommentRequirement Required
