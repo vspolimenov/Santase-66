@@ -26,177 +26,157 @@ import com.java.cpc.player.Team;
 
 public class GameCycle {
 
-	static private Team firstTeam = new Team(new HumanPlayer("Player One"), new ComputerPlayer("Player Two"), "Team 1");
-	static private Team secondTeam = new Team(new ComputerPlayer("Player Three"), new ComputerPlayer("Player Four"), "Team 2");
-
-	static List<Player> players = new ArrayList<Player>();
-
-	static private Suit trump ;
-	static private String playerOnHand = firstTeam.firstPlayer.name;
-	static private String winningTeamName = firstTeam.name;
+	static Player firstPlayer = new HumanPlayer("Player One");
+	static Player secondPlayer = new HumanPlayer("Player Two");
+	static private boolean hasWinner = false;
+	
+	static private Suit trump = Suit.Clubs;
+	static private boolean isFirstPlayerOnHand = true;
 	static private Deck deck = new Deck();
 
 	public static void startGame() {
-
-		players.add(firstTeam.firstPlayer);
-		players.add(secondTeam.secondPlayer);
 		
-		while (firstTeam.getScore() < 151 || secondTeam.getScore() < 151) {
+		while (firstPlayer.getScore() < 11 || secondPlayer.getScore() < 11) {
 			playRound();
 		}
 	}
-
-	static private void playRound() {
-
+	static private void fillPlayersHands() {
+		
 		for (int i = 0; i < 2; i++) {
-			players.get(i).fillHand(deck.dealThreeCards());
+			firstPlayer.fillHand(deck.dealThreeCards());
+			secondPlayer.fillHand(deck.dealThreeCards());
 		}
+	}
+	static private void getOneCardFromDeck() {
+		firstPlayer.fillHand(deck.dealOneCard());
+		secondPlayer.fillHand(deck.dealOneCard());
+	}
+	static private void playRound() {
+		
 		Random r = new Random();
 		trump.id = (r.nextInt((GameConstants.SUIT_COUNT - GameConstants.SUIT_MIN_COUNT) + 1) + GameConstants.SUIT_MIN_COUNT - 1);
 		System.out.println(trump);
-
-		for (int i = 0; i < 2; i++) {
-			players.get(i).fillHand(deck.dealThreeCards());
-		}
-
-		for (int i = 0; i < 8; i++) {
-			System.out.println("Round " + (i +1));
+		
+		fillPlayersHands();
+		int round = 1;
+		while(!deck.isEmpty() && !hasWinner) {
+			System.out.println("Round " + (round++));
 			playOneTurn();
+			getOneCardFromDeck();
 		}
-
-		calculateRoundScore();
+		
+		while(!firstPlayer.getCardsInHand().isEmpty()) {
+			playOneTurnFinnal();
+		}
 
 	}
 
-	static private List<Card> sort(List<Card> cardsOnTable) {
 
-		Collections.sort(cardsOnTable, new Comparator<Card>() {
-			@Override
-			public int compare(Card one, Card two) {
-				Trump currentTrump = trump.getTrump();
-				String currentTrumpName = currentTrump.toString();
-
-				if (currentTrump == Trump.AllTrumps || currentTrump == Trump.NoTrump) {
-					currentTrumpName = cardsOnTable.get(0).getSuit().toString();
-				}
-
-				String oneSuit = one.getSuit().toString();
-				String twoSuit = two.getSuit().toString();
-
-				if (oneSuit.equals(currentTrumpName) && twoSuit.equals(currentTrumpName) == false) {
-					return -1;
-				} else if (oneSuit.equals(currentTrumpName) == false && twoSuit.equals(currentTrumpName)) {
-					return 1;
-				} else {
-					if (one.getScoce(trump) > two.getScoce(trump)) {
-						return -1;
-					} else {
-						return 1;
-					}
-				}
+	
+	static private void checkForWinner(Player player) {
+		if(player.getRoundScore() >= 66) {
+			System.out.println(player.name + " won this round with " + player.getRoundScore() +" points");
+			if(player.getRoundScore() >= 33) {
+				player.calculateScore(1);
+			} else if(player.getRoundScore() > 0) {
+				player.calculateScore(2);
+			} else {
+				player.calculateScore(3);
 			}
-		});
-		return cardsOnTable;
-
+			hasWinner =  true;
+		} 
+		hasWinner =  false;
 	}
 
-	static private void calculateRoundScore() {
-		firstTeam.calculateScore();
-		secondTeam.calculateScore();
-	}
 
-	static private void calculateTurnScore(List<Card> playedCards) {
-
-		int score = 0;
-		for (Card card : playedCards) {
-			score += card.getScoce(trump);
-		}
-
-		if (winningTeamName.equals(firstTeam.name)) {
-			firstTeam.updateLocalScore(score);
-		} else {
-			secondTeam.updateLocalScore(score);
-		}
-	}
 
 
 	static private void playOneTurn() {
 		List<Card> playedCards = new ArrayList<Card>();
-
-		int numberOfPlayerOnHand = 0;
-
-		for (int i = 0; i < 4; i++) {
-			if (playerOnHand.equals(players.get(i).name)) {
-				numberOfPlayerOnHand = i;
-			}
+		Card firstRoundPlayerHand = new Card();
+		Card secondRoundPlayerHand = new Card();
+		
+		if(isFirstPlayerOnHand) {
+			checkForWinner(firstPlayer);
+			firstRoundPlayerHand= firstPlayer.chooseCard();
+			playedCards.add(firstRoundPlayerHand);
+			secondRoundPlayerHand= secondPlayer.chooseCard();
+			playedCards.add(secondRoundPlayerHand);
+		} else {
+			checkForWinner(secondPlayer);
+			firstRoundPlayerHand = secondPlayer.chooseCard();
+			playedCards.add(firstRoundPlayerHand);
+			secondRoundPlayerHand= firstPlayer.chooseCard();
+			playedCards.add(secondRoundPlayerHand);
 		}
-
-		for (int i = 0; i < 4; i++) {
-
-			if (numberOfPlayerOnHand == 4) {
-				numberOfPlayerOnHand = 0;
-			}
-			
-			Card choosen = players.get(numberOfPlayerOnHand).chooseCard(players.get(numberOfPlayerOnHand).getCardsInHand().size());
-
-			if(playedCards.size() != 0) {
-				boolean isValid = true;
-
-				for (int j = 0; j < players.get(numberOfPlayerOnHand).getCardsInHand().size(); j++) {
-					if (isValid(players.get(numberOfPlayerOnHand).getCardsInHand().get(j), playedCards)) {
-						isValid = false;
-					}
-				}
-				if (isValid == false) {
-					while (isValid(choosen, playedCards) == false) {
-						choosen = players.get(numberOfPlayerOnHand).chooseCard(players.get(numberOfPlayerOnHand).getCardsInHand().size());
-					}
-				}
-			}
-			numberOfPlayerOnHand++;
-			playedCards.add(choosen);
+		
+		isFirstPlayerOnHand = isFirstPlayerOnHand(playedCards);
+		if(isFirstPlayerOnHand) {
+			System.out.println(firstPlayer.name + " is onHand");
+		}	else {
+			System.out.println(secondPlayer.name + " is onHand");
 		}
-
-		playerOnHand = getWinnerName(playedCards);
-		System.out.println(playerOnHand);
-		calculateTurnScore(playedCards);
+		
+		calculateRoundScore(playedCards);
+		
+	}
+	
+	static private void playOneTurnFinnal() {
+		List<Card> playedCards = new ArrayList<Card>();
+		Card firstRoundPlayerHand = new Card();
+		Card secondRoundPlayerHand = new Card();
+		
+		if(isFirstPlayerOnHand) {
+			checkForWinner(firstPlayer);
+			firstRoundPlayerHand= firstPlayer.chooseCard();
+			playedCards.add(firstRoundPlayerHand);
+			secondRoundPlayerHand= secondPlayer.chooseCard();
+			while(!secondRoundPlayerHand.getSuit().equals(trump) && 
+					(!firstRoundPlayerHand.getSuit().equals(secondRoundPlayerHand.getSuit()) && 
+				secondPlayer.hasCurrenSuit(firstRoundPlayerHand.getSuit()))) {
+				System.out.println("You must answer your oponent with valid card!");
+				secondRoundPlayerHand= secondPlayer.chooseCard();
+			}
+			playedCards.add(secondRoundPlayerHand);
+		} else {
+			checkForWinner(secondPlayer);
+			firstRoundPlayerHand = secondPlayer.chooseCard();
+			playedCards.add(firstRoundPlayerHand);
+			secondRoundPlayerHand= firstPlayer.chooseCard();
+			while(!secondRoundPlayerHand.getSuit().equals(trump) && 
+					(!firstRoundPlayerHand.getSuit().equals(secondRoundPlayerHand.getSuit()) && 
+							firstPlayer.hasCurrenSuit(firstRoundPlayerHand.getSuit()))) {
+				System.out.println("You must answer your oponent with valid card!");
+				secondRoundPlayerHand= firstPlayer.chooseCard();
+			}
+			playedCards.add(secondRoundPlayerHand);
+		}
+		
+		isFirstPlayerOnHand = isFirstPlayerOnHand(playedCards);
+		if(isFirstPlayerOnHand) {
+			System.out.println(firstPlayer.name + " is onHand");
+		}	else {
+			System.out.println(secondPlayer.name + " is onHand");
+		}
+		
+		calculateRoundScore(playedCards);
 	}
 
-	private static boolean isValid(Card choosen, List<Card> playedCards) {
-
-		Card firstPlayed = playedCards.get(0);
-		playedCards = sort(playedCards);
-		boolean isValid = false;
-
-		boolean isValidOnTrumps = choosen.getSuit().equals(trump.getTrump())
-				&& choosen.compareTo(playedCards.get(playedCards.size() - 1), trump) == 1;
-		boolean isValidOnNoTrump = trump.getTrump().equals(Trump.NoTrump)
-				&& firstPlayed.getSuit().equals(choosen.getSuit());
-
-		if (isValidOnTrumps || isValidOnNoTrump) {
-			isValid = true;
+	static private void calculateRoundScore(List<Card> playedCards) {
+		if(isFirstPlayerOnHand) {
+			firstPlayer.calculateRoundScore(playedCards.get(0).getRank().points + playedCards.get(1).getRank().points);
+		} else {
+			secondPlayer.calculateRoundScore(playedCards.get(0).getRank().points + playedCards.get(1).getRank().points);
 		}
-
-		return isValid;
 	}
 
-	static private String getWinnerName(List<Card> playedCards) {
+	static private boolean isFirstPlayerOnHand(List<Card> playedCards) {
 
-		playedCards = sort(playedCards);
-		String playerOnHand = null;
-
-		for (int i = 0; i < 4; i++) {
-			if (players.get(i).getLastGiven().equals(playedCards.get(3))) {
-				playerOnHand = players.get(i).name;
-				if ((i + 1) % 2 == 0) {
-					winningTeamName = firstTeam.name;
-				} else {
-					winningTeamName = secondTeam.name;
-				}
-				break;
-			}
+		boolean isSamePlayerOnHand = isFirstPlayerOnHand;
+		if(playedCards.get(0).compareTo(playedCards.get(1), trump ) == -1) {
+			isSamePlayerOnHand =  !isFirstPlayerOnHand;
 		}
-
-		return playerOnHand;
+		
+		return isSamePlayerOnHand;
 	}
 }
