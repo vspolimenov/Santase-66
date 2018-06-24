@@ -25,7 +25,6 @@ public class Deck {
 	private void fillDeck() {
 		fillOneSuit(Suit.Clubs);
 		fillOneSuit(Suit.Dyamonds);
-		fillOneSuit(Suit.Clubs);
 		fillOneSuit(Suit.Hearts);
 		fillOneSuit(Suit.Spade);
 
@@ -42,7 +41,11 @@ public class Deck {
 	}
 
 	private void shuffle() {
+		for(Card card : deck) {
+			System.out.println(card.getRank() +" " + card.getSuit());
+		}
 		Collections.shuffle(deck);
+		
 	}
 
 	public List<Card> dealThreeCards() {
@@ -62,5 +65,14 @@ public class Deck {
 
 		dealed++;
 		return dealedCards;
+	}
+	
+	public boolean isEmpty(){
+		boolean isEmpty = true;
+		if(dealed < 24) {
+			isEmpty = false ;
+		}
+		
+		return isEmpty;
 	}
 }
