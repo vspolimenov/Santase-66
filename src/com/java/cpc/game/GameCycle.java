@@ -59,9 +59,9 @@ public class GameCycle {
 
 	static private void playRound() throws CardGameInputFormatException {
 
-		Random r = new Random();
 		trump = Suit.Clubs;
 
+		Random r = new Random();
 		trump = Suit.values()[(r.nextInt((GameConstants.SUIT_COUNT - GameConstants.SUIT_MIN_COUNT) + 1)
 				+ GameConstants.SUIT_MIN_COUNT - 1)];
 		ConsoleIO.printTrump(trump);
@@ -101,13 +101,15 @@ public class GameCycle {
 		checkForWinner(firstPlayer);
 
 		Card firstRoundPlayerHand = new Card();
-		Card secondRoundPlayerHand = new Card();
+		
 
 		firstRoundPlayerHand = firstPlayer.chooseCard(trump);
 		firstPlayer.removeCardFromHands(firstRoundPlayerHand);
 
 		List<Card> playedCards = new ArrayList<Card>();
 		playedCards.add(firstRoundPlayerHand);
+		
+		Card secondRoundPlayerHand = new Card();
 		secondRoundPlayerHand = secondPlayer.chooseCard(trump);
 		secondPlayer.removeCardFromHands(secondRoundPlayerHand);
 		playedCards.add(secondRoundPlayerHand);
@@ -118,14 +120,16 @@ public class GameCycle {
 	static private List<Card> playersChooseCardFinnal(Player firstPlayer, Player secondPlayer) {
 		checkForWinner(firstPlayer);
 
+		
+		
 		Card firstRoundPlayerHand = new Card();
-		Card secondRoundPlayerHand = new Card();
-
 		firstRoundPlayerHand = firstPlayer.chooseCard(trump);
 		firstPlayer.removeCardFromHands(firstRoundPlayerHand);
 
 		List<Card> playedCards = new ArrayList<Card>();
 		playedCards.add(firstRoundPlayerHand);
+		
+		Card secondRoundPlayerHand = new Card();
 		secondRoundPlayerHand = secondPlayer.chooseCard(trump);
 		while (!secondRoundPlayerHand.getSuit().equals(trump)
 				&& (!firstRoundPlayerHand.getSuit().equals(secondRoundPlayerHand.getSuit())
@@ -166,13 +170,14 @@ public class GameCycle {
 
 	static private void calculateRoundScore(List<Card> playedCards) {
 		isFirstPlayerOnHand = isFirstPlayerOnHand(playedCards);
-
+		int pointsForThisRound = playedCards.get(0).getRank().points + playedCards.get(1).getRank().points;
+		
 		if (isFirstPlayerOnHand) {
 			ConsoleIO.printOnHandPlayer(firstPlayer.getName());
-			firstPlayer.calculateRoundScore(playedCards.get(0).getRank().points + playedCards.get(1).getRank().points);
+			firstPlayer.calculateRoundScore(pointsForThisRound);
 		} else {
 			ConsoleIO.printOnHandPlayer(secondPlayer.getName());
-			secondPlayer.calculateRoundScore(playedCards.get(0).getRank().points + playedCards.get(1).getRank().points);
+			secondPlayer.calculateRoundScore(pointsForThisRound);
 		}
 	}
 

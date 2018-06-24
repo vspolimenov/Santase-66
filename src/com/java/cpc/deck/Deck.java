@@ -74,12 +74,12 @@ public class Deck {
 	}
 	
 	public boolean hasCards(){
-		boolean isEmpty = false;
-		if(dealed >= 24) {
-			isEmpty = true ;
+		boolean hasCards = false;
+		if(dealed <= 24) {
+			hasCards = true ;
 		}
 		
-		return isEmpty;
+		return hasCards;
 	}
 	
 	@Override
