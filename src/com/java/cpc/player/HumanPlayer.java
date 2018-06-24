@@ -20,12 +20,12 @@ public class HumanPlayer extends Player {
 	}
 	
 	@Override
-	public Card chooseCard(int maxChoice) {
+	public Card chooseCard() {
 		for(Card c: cardsInHand){
-		//	System.out.println(c.getRank() +" " +  c.getSuit());
+			System.out.println(c.getRank() +" " +  c.getSuit());
 		}
 		
-		int choiceFromHand = ConsoleIOManager.getPlayerCardChoice(maxChoice);
+		int choiceFromHand = ConsoleIOManager.getPlayerCardChoice(cardsInHand.size());
 		lastGiven = cardsInHand.get(choiceFromHand);
 
 		cardsInHand.remove(choiceFromHand);

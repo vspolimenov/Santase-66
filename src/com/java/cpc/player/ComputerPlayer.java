@@ -18,7 +18,7 @@ public class ComputerPlayer extends Player {
 		return randomNum;
 	}
 
-	public Card chooseCard(int maxChoice) {
+	public Card chooseCard() {
 
 		int choiceFromHand = this.randomGeneratedChoice();
 		lastGiven = cardsInHand.get(choiceFromHand);

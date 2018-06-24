@@ -9,6 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import com.java.cpc.deck.Card;
+import com.java.cpc.deck.Suit;
 import com.java.cpc.rules.SpecialAnnounce;
 
 /**
@@ -19,6 +20,8 @@ public abstract class Player {
 
 	protected List<Card> cardsInHand = new ArrayList<>();
 	protected Card lastGiven = new Card();
+	protected int points = 0;
+	protected int roundPoints = 0;
 	private List<SpecialAnnounce> specialAnounces = new ArrayList<>();
 	public Player(String name) {
 		this.name = name;
@@ -36,7 +39,17 @@ public abstract class Player {
 
 	public String name = null;
 	public String team = null;
-
+	
+	public boolean hasCurrenSuit (Suit suit) {
+		boolean hasCurrenSuit = false;
+		for(Card card: cardsInHand) {
+			if(card.getSuit().equals(suit)) {
+				hasCurrenSuit =  true;
+			}
+		}
+		return hasCurrenSuit;	
+	}
+	
 	public List<Card> sort(List<Card> cardsOnTable) {
 
 		Collections.sort(cardsOnTable, new Comparator<Card>() {
@@ -59,7 +72,20 @@ public abstract class Player {
 	public Card getLastGiven() {
 		return lastGiven;
 }
-
-	public abstract Card chooseCard(int maxChoice);
+	public void calculateRoundScore(int roundPoints){
+		this.roundPoints += roundPoints;
+	}
+	
+	public int getRoundScore() {
+		return this.roundPoints;
+	}
+	public void calculateScore(int points){
+		this.points += points;
+	}
+	
+	public int getScore() {
+		return this.points;
+	}
+	public abstract Card chooseCard();
 
 }
