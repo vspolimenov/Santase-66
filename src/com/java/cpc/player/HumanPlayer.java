@@ -3,9 +3,8 @@
  */
 package com.java.cpc.player;
 
-import java.util.List;
-
 import com.java.cpc.deck.Card;
+import com.java.cpc.deck.Suit;
 import com.java.cpc.io.ConsoleIOManager;
 
 /**
@@ -20,27 +19,20 @@ public class HumanPlayer extends Player {
 	}
 	
 	@Override
-	public Card chooseCard() {
-		for(Card c: cardsInHand){
-			System.out.println(c.getRank() +" " +  c.getSuit());
+	public Card chooseCard(Suit trump) {
+		ConsoleIOManager.printPlayerInfo(getName(), roundPoints);
+		int index = 1;
+		for(Card card: cardsInHand){
+			ConsoleIOManager.printCardInfo(index++, card);
 		}
-		
-		int choiceFromHand = ConsoleIOManager.getPlayerCardChoice(cardsInHand.size());
+		int choiceFromHand = 0;
+		do{
+			choiceFromHand = ConsoleIOManager.getPlayerCardChoice(cardsInHand.size());
+		} while (choiceFromHand < 0 || choiceFromHand >= cardsInHand.size()) ;
 		lastGiven = cardsInHand.get(choiceFromHand);
-
-		cardsInHand.remove(choiceFromHand);
+		makeSpecialAnnounce(lastGiven, trump);	
+		ConsoleIOManager.printPlayedCardInfo(getName(), lastGiven);
 		return lastGiven;
-
-	}
-
-	@Override
-	public void checkForSpecialAnnounces() {
-		// TODO Auto-generated method stub
-
-	}
-
-	private void makeSpecialAnnounce() {
-
 	}
 
 }

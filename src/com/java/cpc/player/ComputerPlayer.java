@@ -3,6 +3,7 @@ package com.java.cpc.player;
 import java.util.Random;
 
 import com.java.cpc.deck.Card;
+import com.java.cpc.deck.Suit;
 
 public class ComputerPlayer extends Player {
 
@@ -18,24 +19,15 @@ public class ComputerPlayer extends Player {
 		return randomNum;
 	}
 
-	public Card chooseCard() {
+	public Card chooseCard(Suit trump) {
 
 		int choiceFromHand = this.randomGeneratedChoice();
 		lastGiven = cardsInHand.get(choiceFromHand);
-
-		cardsInHand.remove(choiceFromHand);
+		
+		makeSpecialAnnounce(lastGiven,trump);
 		return lastGiven;
 	}
 
-	public void checkForSpecialAnnounces() {
-
-	}
-
-	private void makeSpecialAnnounce() {
-
-	}
-
-	
 	private static int getRandomNumberInRange(int min, int max) {
 
 		if (min >= max) {
