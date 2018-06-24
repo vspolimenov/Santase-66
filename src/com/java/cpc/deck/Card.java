@@ -38,6 +38,24 @@ public class Card {
 		this.suit = suit;
 	}
 
+	private int compareRanks(Card card) {
+		return this.getRank().compareTo(card.rank);
+	}
+
+	public int compareTo(Card card, Suit trump) {
+		int result = 0;
+
+		if (this.getSuit().equals(card.getSuit())) {
+			result = this.compareRanks(card);
+		} else if (card.getSuit().equals(trump)) {
+			result = -1;
+		} else if (this.getSuit().equals(trump)) {
+			result = 1;
+		}
+
+		return result;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		Card card = (Card) o;
@@ -55,22 +73,6 @@ public class Card {
 		int result = 17;
 		result = 31 * result + rank.hashCode();
 		result = 31 * result + suit.hashCode();
-		return result;
-	}
-
-	private int compareRanks(Card card) {
-		return this.getRank().compareTo(card.rank);
-	}
-
-	public int compareTo(Card card, Suit trump) {
-		int result = 0;
-		
-		if (this.getSuit().equals(card.getSuit())) {
-			result = this.compareRanks(card);
-		} else if (card.getSuit().equals(trump)) {
-			result = -1;
-		}
-		
 		return result;
 	}
 

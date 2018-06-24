@@ -13,11 +13,11 @@ import java.util.List;
  */
 public class Deck {
 
-	private List<Card> deck = null;
-	private int dealed = 0;
+	private List<Card> deck;
+	private int dealed;
 
 	public Deck() {
-
+		this.dealed = 0;
 		this.deck = new ArrayList<Card>();
 		this.fillDeck();
 	}
@@ -41,9 +41,6 @@ public class Deck {
 	}
 
 	private void shuffle() {
-		for(Card card : deck) {
-			System.out.println(card.getRank() +" " + card.getSuit());
-		}
 		Collections.shuffle(deck);
 		
 	}
@@ -74,5 +71,24 @@ public class Deck {
 		}
 		
 		return isEmpty;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		Deck deck = (Deck) o;
+		boolean isEquals = false;
+		if (this.deck.equals(deck)) {
+			isEquals = true;
+		}
+
+		return isEquals;
+
+	}
+
+	@Override
+	public int hashCode() {
+		int result = 17;
+		result = 31 * result + deck.hashCode();
+		return result;
 	}
 }
